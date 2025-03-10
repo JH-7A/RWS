@@ -1,5 +1,5 @@
 id: 天擎终端安全管理系统getsimilarlist存在SQL注入漏洞
-time: "2025"  # 冒号后必须有一个空格
+time: "2025"
 
 info:
   name: 天擎终端安全管理系统getsimilarlist SQL注入
