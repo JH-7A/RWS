@@ -75,6 +75,8 @@
 ## 使用方法
 
 1. 运行主程序：`python app.py`
+![image](https://github.com/user-attachments/assets/872b1ef5-940a-47d2-83b0-2f7fdba74b11)
+
 2. 按照菜单提示选择产品类型、产品和漏洞类型
 3. 输入目标URL或URL文件
 4. 查看扫描结果和生成的报告
