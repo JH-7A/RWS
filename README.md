@@ -76,9 +76,10 @@
 
 1. 运行主程序：`python app.py`
 ![image](https://github.com/user-attachments/assets/872b1ef5-940a-47d2-83b0-2f7fdba74b11)
-2. 按照菜单提示选择产品类型、产品和漏洞类型
+2. 按照菜单提示选择产品类型、产品和漏洞类型（所有指令任意层级均能使用：cd .. exit 组合选择）
 3. 输入目标URL或URL文件
-4. 查看扫描结果和生成的报告
+4. 查看扫描结果和生成的报告（报告包含漏洞url，数据包信息，扫描时间，危害程度）
+![image](https://github.com/user-attachments/assets/d986d357-cab7-452d-a800-d7d312157b36)
 
 ## 配置文件
 
