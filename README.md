@@ -1,6 +1,6 @@
 # 漏洞验证工具
 
-一个用于验证Web应用漏洞的命令行工具。RWS:Remote Weapon Station
+一个用于漏洞验证的命令行工具。RWS:Remote Weapon Station
 
 ## 法律与合规
 - 本工具遵循 [Apache-2.0] 协议开源
