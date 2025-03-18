@@ -7,7 +7,7 @@ threads: 10  # 设置并发线程数
 # 自定义请求头信息
 headers:
   User-Agent: "Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0"
-  # 请使用Cookie替代Authorization字段
+  Connection: close
   #Cookie: "sessionid=your_session_id_here"  # 示例Cookie，替换为实际的Cookie值
 
 # 请求超时设置（单位：秒）
