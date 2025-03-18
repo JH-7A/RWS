@@ -1,0 +1,85 @@
+id: poc_template
+time: "2025"  # 冒号后必须有一个空格
+
+info:
+  name: POC模板示例
+  author: author_name
+  severity: high  # 可选值: high, medium, low
+  description: |
+    这是一个标准的POC模板，用于规范POC的编写格式。
+    可以在这里详细描述漏洞的信息和利用方式。
+  reference: 
+    - https://example.com/reference1
+    - https://example.com/reference2
+  additional: 额外的信息可以放在这里
+  metadata:
+    steps: 3  # 请求数量
+
+requests:
+  # 第一个请求：检测系统是否在线
+  - method: 
+      - GET  # 支持的方法: GET, POST, PUT, DELETE等
+    path:
+      - "{{BaseURL}}/api/health"  # {{BaseURL}}会被替换为用户输入的URL
+    # 可选：请求头
+    RequestHeader:
+      - "User-Agent: Mozilla/5.0"
+      - "Content-Type: application/json"
+    # 可选：请求体（适用于POST等方法）
+    body:
+      - '{"key": "value"}'
+    # 匹配条件：and表示所有条件都必须满足，or表示任一条件满足即可
+    condition: and
+    # 匹配规则
+    matchers:
+      # 匹配响应状态码
+      - type: status
+        status:
+          - 200
+          - 301
+      # 匹配响应体中的关键词
+      - type: word
+        part: body  # 匹配部分：body, header
+        words:
+          - "success"
+          - "online"
+      # 匹配响应时间
+      - type: time
+        # 可以使用以下任一条件
+        gt: 1  # 大于1秒
+        lt: 5  # 小于5秒
+        # gte: 1  # 大于等于1秒
+        # lte: 5  # 小于等于5秒
+
+  # 第二个请求：检测特定接口
+  - method: 
+      - POST
+    path:
+      - "{{BaseURL}}/api/login"
+    body:
+      - '{"username": "admin", "password": "admin"}'
+    condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "login success"
+      - type: status
+        status:
+          - 200
+
+  # 第三个请求：尝试利用漏洞
+  - method: 
+      - GET
+    path:
+      - "{{BaseURL}}/api/admin?id=1' OR '1'='1"
+    condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "admin"
+          - "password"
+      - type: status
+        status:
+          - 200 
