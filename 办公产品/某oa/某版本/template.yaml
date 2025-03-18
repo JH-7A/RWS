@@ -4,7 +4,7 @@ time: "2025"  # 冒号后必须有一个空格
 info:
   name: POC模板示例
   author: author_name
-  severity: high  # 可选值: critical, high, medium, low, info
+  severity: high  # 可选值: high, medium, low
   description: |
     这是一个标准的POC模板，用于规范POC的编写格式。
     可以在这里详细描述漏洞的信息和利用方式。
